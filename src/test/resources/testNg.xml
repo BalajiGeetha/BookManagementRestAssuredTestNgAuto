@@ -16,7 +16,7 @@
             <class name="tests.BookManagement.createBookDetails"/>
             <class name="tests.BookManagement.getBooks"/>
             <class name="tests.BookManagement.updateBookDetails"/>
-
+            <class name="tests.BookManagement.deleteBookDetails"/>
         </classes>
     </test>
 </suite>
