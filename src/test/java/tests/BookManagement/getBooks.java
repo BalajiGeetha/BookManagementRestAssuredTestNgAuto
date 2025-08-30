@@ -39,7 +39,7 @@ public class getBooks {
     @Test(description ="Verify the status code",priority = 1)
 public JsonPath GetBooksStatus() throws FileNotFoundException{
 
-       Response response = createBaseRequestSpec().given().log().all()
+       Response response = createBaseRequestSpec().given()
                 .when()
                 .get(configBaseBookPath())
                 .then()

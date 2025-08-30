@@ -31,7 +31,7 @@ public class createBookDetails {
         Response response = createBaseRequestSpec().given().contentType(ContentType.JSON).body(requestBody)
                 .when()
                 .post(configBaseBookPath())
-                .then().log().all()
+                .then()
                 .extract().response();
 
         Assert.assertEquals(response.getStatusCode(),200);
@@ -43,7 +43,7 @@ public class createBookDetails {
         Response response = createBaseRequestSpec().given().contentType(ContentType.JSON).body(requestBody)
                 .when()
                 .post(configBaseBookPath())
-                .then().log().all()
+                .then()
                 .extract().response();
 
         JsonPath ExpectedJson = JsonPath.given(requestBody);
