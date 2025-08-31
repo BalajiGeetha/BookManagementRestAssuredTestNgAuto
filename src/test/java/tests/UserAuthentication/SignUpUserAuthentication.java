@@ -11,7 +11,6 @@ import io.restassured.specification.RequestSpecification;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import java.io.FileNotFoundException;
-import java.io.SyncFailedException;
 
 import static configFiles.configBasepath.configBaseSignUpPath;
 import static io.restassured.RestAssured.given;
@@ -66,7 +65,7 @@ public class SignUpUserAuthentication {
                 body(req)
                 .when()
                 .post(configBaseSignUpPath())
-                .then().log().all()
+                .then()
                 .extract().response();
 
         Assert.assertEquals(response.getStatusCode(),400);
@@ -84,7 +83,7 @@ public class SignUpUserAuthentication {
                 body(req)
                 .when()
                 .post("/signu")
-                .then().log().all()
+                .then()
                 .extract().response();
 
         Assert.assertEquals(response.getStatusCode(),404);

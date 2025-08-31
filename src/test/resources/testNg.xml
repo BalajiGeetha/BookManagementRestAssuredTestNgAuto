@@ -9,6 +9,7 @@
     <test name="User Authentication">
         <classes>
             <class name="tests.UserAuthentication.SignUpUserAuthentication"/>
+            <class name="tests.UserAuthentication.Login"/>
         </classes>
     </test>
     <test name="CRUD Operation on BookManagement">
