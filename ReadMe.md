@@ -20,7 +20,7 @@ Report-Allure Report
 6.src/test/java
 ---package - tests
 --tests.BookManagement -- This classes contains test methods to do CRUD operation for BookManagement(create,get,update and delete)
-27 TestCases --
+26 TestCases --
 TestNG Framework which is having @annotation(test,description,priority and dataprovider)
 i) Use Hard and soft assertion to compare the actual and expected response
 ii)Implement the Fileinput and output stream to save the file and compare against the actual response
