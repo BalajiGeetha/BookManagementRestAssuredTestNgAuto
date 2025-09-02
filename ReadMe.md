@@ -7,16 +7,18 @@
 
 # ****Steps and Implementation*****
 
-1.Make sure Java and Apache maven is installed and configured properly
-2.Created maven project with Pom.xml - 
+#### 1.Make sure Java and Apache maven is installed and configured properly
+
+#### 2.Created maven project with Pom.xml - 
+
 The Pom.xml file  contains all dependency related to RestAssured, TestNG, JSON and Allure Report 
 
 #### Project Structure
 
-----src/main/java
+**----src/main/java
 ----src/test/java
 ----src/test/resources
----pom.xml
+---pom.xml**
 
 ### Below are steps to implement the framework
 
