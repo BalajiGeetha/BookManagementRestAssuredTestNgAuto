@@ -7,7 +7,7 @@ import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import Constants.constants.*;
+
 import java.io.FileNotFoundException;
 import java.util.List;
 import static Constants.constants.BookId;
@@ -24,12 +24,12 @@ public class deleteBookDetails {
                 .header("Authorization", "Bearer " + APIKeys);
     }
 
-    @Test(description ="Verify the status code",priority = 1)
-    public void DeleteBooksStatus() throws FileNotFoundException {
+    @Test(description ="Verify the Delete with ExistingBookDetails",priority = 1)
+    public void verifyDeleteExistingBookDetails() throws FileNotFoundException {
 
-        getBooks books = new getBooks();
+        getBookDetails books = new getBookDetails();
 
-        List<Integer> list = books.GetBooksStatus().get("id");
+        List<Integer> list = books.verifyBooksStatus().get("id");
 
         for(int i=3;i<4;i++) {
             BookId = list.get(i);
@@ -42,31 +42,6 @@ public class deleteBookDetails {
 
 
                 Assert.assertEquals(response.getStatusCode(), 200);
-            }
-            else{
-                System.out.println("No bookId is available for delete");
-            }
-        }
-
-    }
-    @Test(description ="Verify the status message",priority = 2)
-    public void DeleteBooksStatusMessage() throws FileNotFoundException {
-
-        getBooks books = new getBooks();
-
-        List<Integer> list = books.GetBooksStatus().get("id");
-
-        for(int i=2;i<3;i++) {
-            BookId = list.get(i);
-            if(BookId != 0) {
-                System.out.println(BookId);
-                Response response = createBaseRequestSpec().given()
-                        .when()
-                        .delete(configBaseBookPath() + BookId)
-                        .then()
-                        .extract().response();
-
-
                 Assert.assertEquals(response.jsonPath().getString("message"), "Book deleted successfully");
             }
             else{
@@ -76,8 +51,9 @@ public class deleteBookDetails {
 
     }
 
-    @Test(description ="Verify the DeleteBooksStatus With IncorrectId",priority = 3)
-    public void DeleteBooksStatusWithIncorrectId() throws FileNotFoundException {
+
+    @Test(description ="Verify the Delete with NonExistingBookDetails",priority = 2)
+    public void verifyDeleteNonExistingBookDetails() throws FileNotFoundException {
 
         BookId = 77;
                 Response response = createBaseRequestSpec().given()
@@ -91,8 +67,8 @@ public class deleteBookDetails {
         Assert.assertEquals(response.jsonPath().getString("detail"), "Book not found");
             }
 
-    @Test(description ="Verify the DeleteBooksStatus With IncorrectPath",priority = 4)
-    public void DeleteBooksStatusWithIncorrectPath() throws FileNotFoundException {
+    @Test(description ="Verify the Delete With IncorrectPath",priority = 3)
+    public void verifyDeleteWithIncorrectPath() throws FileNotFoundException {
 
         BookId = 77;
         Response response = createBaseRequestSpec().given()

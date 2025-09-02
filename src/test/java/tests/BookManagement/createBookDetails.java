@@ -25,8 +25,8 @@ public class createBookDetails {
                 .header("Authorization", "Bearer " + APIKeys);
     }
 
-    @Test(description ="Verify the CreateAndUploadBookDetails and check the status",priority = 1)
-    public void CreateAndUploadBookDetails() throws FileNotFoundException {
+    @Test(description ="Verify the CreateBookDetails and check the status",priority = 1)
+    public void verifyCreateBookDetails() throws FileNotFoundException {
         String requestBody = RequestBody.requestBodyCreation.createRequest();
         Response response = createBaseRequestSpec().given().contentType(ContentType.JSON).body(requestBody)
                 .when()
@@ -38,7 +38,7 @@ public class createBookDetails {
 
     }
     @Test(description ="Verify the response for the createBookDetails",priority = 2)
-    public void VerifyTheCreatedResponse() throws FileNotFoundException {
+    public void VerifyTheCreatedBookResponseWithExistingData() throws FileNotFoundException {
         String requestBody = RequestBody.requestBodyCreation.createRequest();
         Response response = createBaseRequestSpec().given().contentType(ContentType.JSON).body(requestBody)
                 .when()
@@ -51,7 +51,7 @@ public class createBookDetails {
 
     }
     @Test(description ="Verify the createBookDetails from IncorrectPath",priority = 3)
-    public void VerifyIncorrectPath() throws FileNotFoundException {
+    public void verifyCreateBookDetailsWithIncorrectPath() throws FileNotFoundException {
         String requestBody = RequestBody.requestBodyCreation.createRequest();
         Response response = createBaseRequestSpec().given().contentType(ContentType.JSON).body(requestBody)
                 .when()
@@ -64,7 +64,7 @@ public class createBookDetails {
 
     }
     @Test(description ="Verify the createBookDetails from IncorrectRequestBody",priority = 4)
-    public void VerifyIncorrectRequestBody() throws FileNotFoundException {
+    public void VerifyCreateBookDetailsWithIncorrectRequestBody() throws FileNotFoundException {
         String requestBody = RequestBody.requestBodyCreation.createRequest();
         Response response = createBaseRequestSpec().given().contentType(ContentType.JSON).body(requestBody+"{}")
                 .when()
@@ -79,7 +79,7 @@ public class createBookDetails {
 
     }
     @Test(description ="Verify the createBookDetails from MissingResourcePath",priority = 5)
-    public void VerifyMissingPath() throws FileNotFoundException {
+    public void VerifyCreateBookDetailsWithMissingPath() throws FileNotFoundException {
         String requestBody = RequestBody.requestBodyCreation.createRequest();
         Response response = createBaseRequestSpec().given().contentType(ContentType.JSON).body(requestBody)
                 .when()

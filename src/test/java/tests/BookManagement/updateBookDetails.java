@@ -26,7 +26,7 @@ public class updateBookDetails {
     }
 
     @Test(description ="Verify the UpdateBookDetails and check the status",priority = 1)
-    public void UpdateBookDetails() throws FileNotFoundException {
+    public void verifyUpdateBookDetails() throws FileNotFoundException {
 
         String requestBody = RequestBody.requestBodyUpdate.updateRequest("Steve","jakson",1995,
                 "A novel set in the Jazz Age on Long Island");
@@ -40,7 +40,7 @@ public class updateBookDetails {
 
     }
     @Test(description ="Verify the UpdateBookDetails and check the response",priority = 2)
-    public void VerifyUpdateBookDetailsResponse() throws FileNotFoundException {
+    public void verifyUpdateBookDetailsResponseWithNew() throws FileNotFoundException {
 
         String requestBody = RequestBody.requestBodyUpdate.updateRequest("Steve","jakson",1995,
                 "A novel set in the Jazz Age on Long Island");
@@ -56,7 +56,7 @@ public class updateBookDetails {
         Assert.assertTrue(true, "Getting Expected response");
     }
     @Test(description ="Verify the UpdateBookDetails without passing ID",priority = 3)
-    public void UpdateBookDetailsWithoutPassingId() throws FileNotFoundException {
+    public void verifyUpdateBookDetailsWithoutPassingId() throws FileNotFoundException {
 
         String requestBody = RequestBody.requestBodyUpdate.updateRequest("Steve","jakson",1995,
                 "A novel set in the Jazz Age on Long Island");
@@ -71,7 +71,7 @@ public class updateBookDetails {
 
     }
     @Test(description ="Verify the UpdateBookDetails with IncorrectPath",priority = 4)
-    public void UpdateBookDetailsIncorrectPath() throws FileNotFoundException {
+    public void verifyUpdateBookDetailsIncorrectPath() throws FileNotFoundException {
 
         String requestBody = RequestBody.requestBodyUpdate.updateRequest("Steve","jakson",1995,
                 "A novel set in the Jazz Age on Long Island");
@@ -86,7 +86,7 @@ public class updateBookDetails {
 
     }
     @Test(description ="Verify the UpdateBookDetails with IncorrectId",priority = 5)
-    public void UpdateBookDetailsIncorrectId() throws FileNotFoundException {
+    public void verifyUpdateBookDetailsIncorrectId() throws FileNotFoundException {
 
         String requestBody = RequestBody.requestBodyUpdate.updateRequest("Steve","jakson",1995,
                 "A novel set in the Jazz Age on Long Island");

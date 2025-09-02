@@ -10,14 +10,16 @@
         <classes>
             <class name="tests.UserAuthentication.SignUpUserAuthentication"/>
             <class name="tests.UserAuthentication.Login"/>
+
         </classes>
     </test>
     <test name="CRUD Operation on BookManagement">
         <classes>
             <class name="tests.BookManagement.createBookDetails"/>
-            <class name="tests.BookManagement.getBooks"/>
+            <class name="tests.BookManagement.getBookDetails"/>
             <class name="tests.BookManagement.updateBookDetails"/>
             <class name="tests.BookManagement.deleteBookDetails"/>
         </classes>
     </test>
+
 </suite>

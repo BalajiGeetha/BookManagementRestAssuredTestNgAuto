@@ -3,7 +3,6 @@ import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
-import org.json.JSONObject;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -21,7 +20,7 @@ import static configFiles.configBasepath.configBaseBookPath;
 import static io.restassured.RestAssured.given;
 
 
-public class getBooks {
+public class getBookDetails {
 
     @DataProvider(name = "bookID")
     public Object[]dataProvide() {
@@ -37,7 +36,7 @@ public class getBooks {
     }
 
     @Test(description ="Verify the status code",priority = 1)
-public JsonPath GetBooksStatus() throws FileNotFoundException{
+public JsonPath verifyBooksStatus() throws FileNotFoundException{
 
        Response response = createBaseRequestSpec().given()
                 .when()
@@ -51,7 +50,7 @@ public JsonPath GetBooksStatus() throws FileNotFoundException{
 
 }
     @Test(description ="Verify the book id count from the list",priority = 2)
-    public void GetBookCount() throws IOException {
+    public void VerifyBookCount() throws IOException {
 
         Response response = createBaseRequestSpec().given()
                 .when()
@@ -69,7 +68,7 @@ public JsonPath GetBooksStatus() throws FileNotFoundException{
 
     }
     @Test(description ="Verify the all book details from the list",priority = 3)
-    public void GetAllBooksDetails() throws IOException {
+    public void verifyGetAllBooksDetails() throws IOException {
 
         Response response = createBaseRequestSpec().given()
                 .when()
@@ -86,7 +85,7 @@ public JsonPath GetBooksStatus() throws FileNotFoundException{
 
     @Test(description ="Verify the specific book from the list",dataProvider = "bookID",priority = 4)
     //@Parameters({"bookID"})
-    public void GetSpecificBookDetails(String bookID) throws FileNotFoundException{
+    public void verifyGetSpecificBookDetails(String bookID) throws FileNotFoundException{
 
         Response response = createBaseRequestSpec().given()
                 .when()
@@ -100,7 +99,7 @@ public JsonPath GetBooksStatus() throws FileNotFoundException{
     }
 
     @Test(description ="Verify the AuthorName from the list",dataProvider = "bookID",priority=5)
-    public void VerifyAuthorName(String bookID) throws FileNotFoundException{
+    public void verifyAuthorNameOfBook(String bookID) throws FileNotFoundException{
 
         Response response = createBaseRequestSpec().given()
                 .when()
@@ -113,7 +112,7 @@ public JsonPath GetBooksStatus() throws FileNotFoundException{
 
     }
     @Test(description ="Verify the PublishedYear from the list",dataProvider = "bookID",priority = 6)
-    public void VerifyPublishedYear(String bookID) throws FileNotFoundException{
+    public void verifyPublishedYearOfBook(String bookID) throws FileNotFoundException{
 
         Response response = createBaseRequestSpec().given()
                 .when()
@@ -128,7 +127,7 @@ public JsonPath GetBooksStatus() throws FileNotFoundException{
 
     }
     @Test(description ="Verify the BookSummary from the list",dataProvider = "bookID",priority = 7)
-    public void VerifyBookSummary(String bookID) throws FileNotFoundException{
+    public void verifyBookSummaryOfBook(String bookID) throws FileNotFoundException{
 
         Response response = createBaseRequestSpec().given()
                 .when()
@@ -142,7 +141,7 @@ public JsonPath GetBooksStatus() throws FileNotFoundException{
 
     }
     @Test(description ="Verify the IncorrectAuthorName from the list",dataProvider = "bookID",priority = 8)
-    public void VerifyIncorrectAuthorName(String bookID) throws FileNotFoundException{
+    public void verifyIncorrectAuthorNameOfTheBook(String bookID) throws FileNotFoundException{
 
         Response response = createBaseRequestSpec().given()
                 .when()
@@ -158,8 +157,8 @@ public JsonPath GetBooksStatus() throws FileNotFoundException{
     }
 
 
-    @Test(description ="Verify the response status for Incorrect bookId",priority = 9)
-    public void PassingIncorrectBookId() throws FileNotFoundException{
+    @Test(description ="Verify the book details with InvalidID",priority = 9)
+    public void verifyGetBookDetailsWithInvalidID() throws FileNotFoundException{
         int bookID = 123;
         Response response = createBaseRequestSpec().given()
                 .when()
@@ -171,7 +170,7 @@ public JsonPath GetBooksStatus() throws FileNotFoundException{
 
     }
     @Test(description ="Verify the IncorrectName from the list",dataProvider = "bookID",priority = 10)
-    public void VerifyIncorrectName(String bookID) throws FileNotFoundException{
+    public void VerifyGetBookDetailsWithIncorrectName(String bookID) throws FileNotFoundException{
 
         Response response = createBaseRequestSpec().given()
                 .when()
@@ -186,7 +185,7 @@ public JsonPath GetBooksStatus() throws FileNotFoundException{
 
     }
     @Test(description ="Verify the IncorrectSummary from the list",dataProvider = "bookID",priority = 11)
-    public void VerifyIncorrectSummary(String bookID) throws FileNotFoundException{
+    public void VerifyGetBookDetailsWithIncorrectSummary(String bookID) throws FileNotFoundException{
 
         Response response = createBaseRequestSpec().given()
                 .when()
@@ -202,7 +201,7 @@ public JsonPath GetBooksStatus() throws FileNotFoundException{
     }
 
     @Test(description ="Verify the IncorrectCharacterInBookId from the list",dataProvider = "bookID",priority = 12)
-    public void VerifyIncorrectCharacterInBookId(String bookID) throws FileNotFoundException{
+    public void VerifyGetBookDetailsWithIncorrectCharacterInBookId(String bookID) throws FileNotFoundException{
 
         Response response = createBaseRequestSpec().given()
                 .when()
@@ -217,7 +216,7 @@ public JsonPath GetBooksStatus() throws FileNotFoundException{
 
     }
     @Test(description ="Verify the IncorrectUrl from the list",dataProvider = "bookID",priority = 13)
-    public void VerifyIncorrectUrl(String bookID) throws FileNotFoundException{
+    public void VerifyGetBookDetailsWithIncorrectPath(String bookID) throws FileNotFoundException{
 
         Response response = createBaseRequestSpec().given()
                 .when()

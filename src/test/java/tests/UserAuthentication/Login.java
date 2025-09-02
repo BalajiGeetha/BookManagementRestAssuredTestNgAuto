@@ -2,6 +2,7 @@ package tests.UserAuthentication;
 
 import configFiles.configReader;
 import configFiles.tokenGeneration;
+import io.qameta.allure.*;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
@@ -26,8 +27,12 @@ public class Login {
                 .header("Authorization", "Bearer " + APIKeys);
     }
 
+    @Feature("User Authentication")
+    @Story("Login API")
+    @Description("Verify the login functionality with valid credentials")
+    @Severity(io.qameta.allure.SeverityLevel.CRITICAL)
     @Test(description ="Verify the login status code",priority = 1)
-    public void LoginStatus() throws FileNotFoundException {
+    public void verifyLogin() throws FileNotFoundException {
 
         String requestBody = RequestBody.requestBodyCreationLogin.createLoginRequest("nprhcrrz").toPrettyString();
 
@@ -41,8 +46,9 @@ public class Login {
 
 
     }
-    @Test(description ="Verify the token type",priority = 2)
-    public void LoginTokenType() throws IOException {
+
+    @Test(description ="Verify the Login token type",priority = 2)
+    public void verifyLoginTokenType() throws IOException {
 
         String requestBody = RequestBody.requestBodyCreationLogin.createLoginRequest("nprhcrrz").toPrettyString();
 
@@ -60,8 +66,8 @@ public class Login {
 
 
     }
-    @Test(description ="Verify the Login with Incorrect Email",priority = 3)
-    public void LoginIncorrectEmail() throws FileNotFoundException {
+    @Test(description ="Verify the Login with InvalidCredentials",priority = 3)
+    public void verifyLoginInvalidCredentials() throws FileNotFoundException {
 
         String requestBody = RequestBody.requestBodyCreationLogin.createLoginRequest("np").toPrettyString();
 
@@ -77,8 +83,53 @@ public class Login {
 
 
     }
-    @Test(description ="Verify the Login with Incorrect Path",priority = 4)
-    public void LoginIncorrectpath() throws FileNotFoundException {
+    @Test(description ="Verify the Login with EmptyBody",priority = 4)
+    public void verifyLoginEmptyBody() throws FileNotFoundException {
+
+        String requestBody = "{}";
+
+        Response response = createBaseRequestSpec().given().body(requestBody)
+                .when()
+                .post("/login")
+                .then()
+                .extract().response();
+
+        Assert.assertEquals(response.getStatusCode(),400);
+
+
+    }
+    @Test(description ="Verify the Login with WithoutBody",priority = 5)
+    public void verifyLoginWithoutBody() throws FileNotFoundException {
+
+        String requestBody = "";
+
+        Response response = createBaseRequestSpec().given().body(requestBody)
+                .when()
+                .post("/login")
+                .then()
+                .extract().response();
+
+        Assert.assertEquals(response.getStatusCode(),422);
+
+
+    }
+    @Test(description ="Verify the Login with MissingFields",priority = 6)
+    public void verifyLoginMissingFields() throws FileNotFoundException {
+
+        String requestBody = RequestBody.requestBodyCreationLogin.createLoginRequest("np").remove("password").toPrettyString();
+
+        Response response = createBaseRequestSpec().given().body(requestBody)
+                .when()
+                .post("/login")
+                .then()
+                .extract().response();
+
+        Assert.assertEquals(response.getStatusCode(),422);
+
+
+    }
+    @Test(description ="Verify the Login with Incorrect Path",priority = 7)
+    public void LoginIncorrectPath() throws FileNotFoundException {
 
         String requestBody = RequestBody.requestBodyCreationLogin.createLoginRequest("np").toPrettyString();
 
@@ -92,4 +143,6 @@ public class Login {
 
 
     }
+
+
 }

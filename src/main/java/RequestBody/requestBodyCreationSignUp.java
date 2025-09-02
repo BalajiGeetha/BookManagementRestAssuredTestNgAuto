@@ -21,7 +21,7 @@ public class requestBodyCreationSignUp {
 
     }
 
-    public static ObjectNode createLoginRequest(){
+    public static ObjectNode createSignUpRequest(){
         randomLoginDataGeneration();
 
         ObjectMapper objectMapper = new ObjectMapper();

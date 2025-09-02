@@ -2,6 +2,10 @@ package tests.HealthCheck;
 
 import configFiles.configReader;
 import configFiles.tokenGeneration;
+import io.qameta.allure.Description;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Severity;
+import io.qameta.allure.Story;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
@@ -21,7 +25,10 @@ public class HealthCheck {
                 .header("Content-Type", "application/json")
                 .header("Authorization", "Bearer " + APIKeys);
     }
-
+    @Feature("Health Check")
+    @Story("Health Status API")
+    @Description("Verify the Health check status")
+    @Severity(io.qameta.allure.SeverityLevel.CRITICAL)
     @Test(description ="Verify the Health check status")
     public void HealthStatus() throws FileNotFoundException {
 
