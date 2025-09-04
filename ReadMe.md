@@ -119,9 +119,9 @@ m)verifySignUpExtraFields -- POST Method to signup with extra fields
 n)verifySignUpWithoutBody -- POST Method to signup without body
 
 #### 6.Testing Framework - TestNG
-
-i)Assertions - AssertEquals, AssertTrue, AssertFalse, AssertNotNull
-ii)Test Suites - testNg.xml to run all the test methods
+i)Annotations - @Test, @DataProvider,priority, description
+ii)Assertions - AssertEquals, AssertTrue, AssertFalse, AssertNotNull
+iii)Test Suites - testNg.xml to run all the test methods
 
 #### 7.Reporting - Allure Report
 
