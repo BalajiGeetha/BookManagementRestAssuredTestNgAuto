@@ -36,7 +36,7 @@ The following dependencies are added in the Pom.xml file
 3. configBasepath -- This classes contains basepath for all the API
 
 ##### --Package-constants:
-1. constants -- This classes contains constants static string and integers
+* constants -- This classes contains constants static string and integers
 
 ##### --Package-pojo:
 * requestBodycreation -- This classes contains all the request body for BookManagement and UserAuthentication
