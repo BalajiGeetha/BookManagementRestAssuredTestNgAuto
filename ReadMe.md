@@ -11,7 +11,13 @@
 
 #### 2.Created maven project with Pom.xml - 
 
-The Pom.xml file  contains all dependency related to RestAssured, TestNG, JSON and Allure Report 
+The following dependencies are added in the Pom.xml file
+* RestAssured
+* TestNg
+* JsonPath
+* Jackson Databind
+* Allure TestNg
+* Allure RestAssured
 
 #### Project Structure
 
