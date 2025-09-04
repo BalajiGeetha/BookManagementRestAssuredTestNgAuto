@@ -31,75 +31,75 @@ The following dependencies are added in the Pom.xml file
 #### 3.src/main/java contains
 
 ##### --Package-configFiles:
-i)configReader -- This classes contains method to read the config.properties file
-ii)tokenGeneration --  This classes contains tokengeneration , configure the properties.
-iii)configBasepath -- This classes contains basepath for all the API
+1. configReader -- This classes contains method to read the config.properties file
+2. tokenGeneration --  This classes contains tokengeneration , configure the properties.
+3. configBasepath -- This classes contains basepath for all the API
 
 ##### --Package-constants:
-i)constants -- This classes contains constants static string and integers
+1. constants -- This classes contains constants static string and integers
 
 ##### --Package-pojo:
-i)requestBodycreation -- This classes contains all the request body for BookManagement and UserAuthentication
-ii)requestBodycreationLogin -- This classes contains all the request body for Login
-iii)requestBodycreationSignUp -- This classes contains all the request body for Signup
-iv)requestBodyUpdate -- This classes contains all the request body for Update BookManagement
+* requestBodycreation -- This classes contains all the request body for BookManagement and UserAuthentication
+* requestBodycreationLogin -- This classes contains all the request body for Login
+* requestBodycreationSignUp -- This classes contains all the request body for Signup
+* requestBodyUpdate -- This classes contains all the request body for Update BookManagement
 
 #### 4.src/main/resources
 
-i)config.properties - this file contains path and keys
-ii)testNg.xml -- this xml file contains classes to run all test methods
-iii)expectedResponse.json -- this file contains expected response to compare against the actual response
-iv)token.txt -- this file contains token generated after login
+* config.properties - this file contains path and keys
+* testNg.xml -- this xml file contains classes to run all test methods
+* expectedResponse.json -- this file contains expected response to compare against the actual response
+* token.txt -- this file contains token generated after login
 
 #### 5.src/test/java
 
 ---package - tests
-i)BookManagementTest -- This class contains all the test methods for Book Management API
-ii)HealthCheckTest -- This class contains all the test methods for Health Check API
-iii)UserAuthenticationTest -- This class contains all the test methods for User Authentication API
+1. BookManagementTest -- This class contains all the test methods for Book Management API
+2. HealthCheckTest -- This class contains all the test methods for Health Check API
+3. UserAuthenticationTest -- This class contains all the test methods for User Authentication API
 
 #### i)BookManagementTest
 
 --Test Methods
 createBookDetails -- POST Method to create a new book
-a)verifyCreateBookDetails -- POST Method to verify the creation of a new book
-b)verifyCreateBookDetailsWithIncorrectPath -- POST Method to create a new book with incorrect path
-c)VerifyCreateBookDetailsWithIncorrectRequestBody  -- POST Method to create a new book with incorrect request body
-d)VerifyTheCreatedBookResponseWithExistingData -- POST Method to create a new book with existing data
-e)VerifyCreateBookDetailsWithMissingPath Parameters -- POST Method to create a new book with missing path parameters
+* verifyCreateBookDetails -- POST Method to verify the creation of a new book
+* verifyCreateBookDetailsWithIncorrectPath -- POST Method to create a new book with incorrect path
+* verifyCreateBookDetailsWithIncorrectRequestBody  -- POST Method to create a new book with incorrect request body
+* verifyTheCreatedBookResponseWithExistingData -- POST Method to create a new book with existing data
+* verifyCreateBookDetailsWithMissingPath Parameters -- POST Method to create a new book with missing path parameters
 
 ##### deleteBookDetails -- DELETE Method to delete the book details by ID
 
-f)verifyDeleteNonExistingBookDetails -- DELETE Method to delete the non existing book details by ID
-g)verifyDeleteWithExistingBookDetails -- DELETE Method to delete the existing book details by ID
-h)verifyDeleteWithIncorrectPath -- DELETE Method to delete the book details with incorrect path
+* verifyDeleteNonExistingBookDetails -- DELETE Method to delete the non existing book details by ID
+* verifyDeleteWithExistingBookDetails -- DELETE Method to delete the existing book details by ID
+* verifyDeleteWithIncorrectPath -- DELETE Method to delete the book details with incorrect path
 
 ##### getBookDetails -- GET Method to get the book details by ID
 
-i)verifyBooksStatus -- GET Method to verify the status of the book details by ID
-j)VerifyBookCount -- GET Method to verify the count of the book details by ID
-k)verifyAllBooksDetails -- GET Method to get all the book details
-l)verifyGetSpecificBookDetails -- GET Method to get a specific book details by ID
-m)verifyAuthorNameOfBook -- GET Method to verify the author name of the book by ID
-n)verifyPublishedYearOfBook -- GET Method to verify the published year of the book by ID
-o)verifyBookSummaryOfBook -- GET Method to verify the book summary of the book by ID
-p)verifyIncorrectAuthorNameOfTheBook -- GET Method to verify the incorrect author name of the book by ID
-q)verifyGetBookDetailsWithInvalidID -- GET Method to get the book details with invalid ID
-r)VerifyGetBookDetailsWithIncorrectName -- GET Method to get the book details with incorrect namespace
-s)VerifyGetBookDetailsWithIncorrectSummary -- GET Method to get the book details with incorrect summary
+* verifyBooksStatus -- GET Method to verify the status of the book details by ID
+* VerifyBookCount -- GET Method to verify the count of the book details by ID
+* verifyAllBooksDetails -- GET Method to get all the book details
+* verifyGetSpecificBookDetails -- GET Method to get a specific book details by ID
+* verifyAuthorNameOfBook -- GET Method to verify the author name of the book by ID
+* verifyPublishedYearOfBook -- GET Method to verify the published year of the book by ID
+* verifyBookSummaryOfBook -- GET Method to verify the book summary of the book by ID
+* verifyIncorrectAuthorNameOfTheBook -- GET Method to verify the incorrect author name of the book by ID
+* verifyGetBookDetailsWithInvalidID -- GET Method to get the book details with invalid ID
+* verifyGetBookDetailsWithIncorrectName -- GET Method to get the book details with incorrect namespace
+* verifyGetBookDetailsWithIncorrectSummary -- GET Method to get the book details with incorrect summary
 
 ##### updateBookDetails -- PUT Method to update the book details by ID
 
-t)verifyUpdateBookDetails -- PUT Method to update the book details by ID
-u)verifyUpdateBookDetailsResponseWithNewData -- PUT Method to update the book details with new data by ID
-v)verifyUpdateBookDetailsWithInvalidID -- PUT Method to update the book details with invalid ID
-w)verifyUpdateBookDetailsIncorrectPath -- PUT Method to update the book details with incorrect path
-x)verifyUpdateBookDetailsIncorrectId -- PUT Method to update the book details with incorrect ID
+* verifyUpdateBookDetails -- PUT Method to update the book details by ID
+* verifyUpdateBookDetailsResponseWithNewData -- PUT Method to update the book details with new data by ID
+* verifyUpdateBookDetailsWithInvalidID -- PUT Method to update the book details with invalid ID
+* verifyUpdateBookDetailsIncorrectPath -- PUT Method to update the book details with incorrect path
+* verifyUpdateBookDetailsIncorrectId -- PUT Method to update the book details with incorrect ID
 
 #### ii)HealthCheck
 
 --Test Methods
-a)verifyHealthCheck -- GET Method to check the health of the API
+* verifyHealthCheck -- GET Method to check the health of the API
 
 #### iii)UserAuthentication
 
@@ -107,13 +107,13 @@ a)verifyHealthCheck -- GET Method to check the health of the API
 
 ##### Login
 
-a)verifyLogin -- POST Method to login with valid credentials
-b)verifyLoginInvalidCredentials -- POST Method to login with invalid credentials
-c)verifyLoginEmptyBody -- POST Method to login with empty body
-d)verifyLoginMissingFields -- POST Method to login with missing fields
-e)verifyLoginWithoutBody -- POST Method to login without body
-f)verifyLoginWithIncorrectPath -- POST Method to login with incorrect path
-g)verifyLoginTokenType -- POST Method to verify the token type in the login response
+* verifyLogin -- POST Method to login with valid credentials
+* verifyLoginInvalidCredentials -- POST Method to login with invalid credentials
+* verifyLoginEmptyBody -- POST Method to login with empty body
+* verifyLoginMissingFields -- POST Method to login with missing fields
+* verifyLoginWithoutBody -- POST Method to login without body
+* verifyLoginWithIncorrectPath -- POST Method to login with incorrect path
+* verifyLoginTokenType -- POST Method to verify the token type in the login response
 
 ##### SighUp
 
