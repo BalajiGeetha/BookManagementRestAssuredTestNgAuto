@@ -131,8 +131,8 @@ iii)Test Suites - testNg.xml to run all the test methods
 
 #### 7.Reporting - Allure Report
 
-i)Dependency - Added Allure dependency in the Pom.xml file
-ii)Annotations - Added Allure annotations in the few test methods
+* i)Dependency - Added Allure dependency in the Pom.xml file
+* ii)Annotations - Added Allure annotations in the few test methods
 @Feature, @Story, @Description, @Severity
 
 
