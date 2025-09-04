@@ -117,22 +117,22 @@ g)verifyLoginTokenType -- POST Method to verify the token type in the login resp
 
 ##### SighUp
 
-i)verifySignUp -- POST Method to signup with valid details
-j)verifySignUpExistingUser -- POST Method to signup with existing user details
-k)verifySignUpEmptyBody -- POST Method to signup with empty body
-l)verifySignUpMissingFields -- POST Method to signup with missing fields
-m)verifySignUpExtraFields -- POST Method to signup with extra fields
-n)verifySignUpWithoutBody -- POST Method to signup without body
+* verifySignUp -- POST Method to signup with valid details
+* verifySignUpExistingUser -- POST Method to signup with existing user details
+* verifySignUpEmptyBody -- POST Method to signup with empty body
+* verifySignUpMissingFields -- POST Method to signup with missing fields
+* verifySignUpExtraFields -- POST Method to signup with extra fields
+* verifySignUpWithoutBody -- POST Method to signup without body
 
 #### 6.Testing Framework - TestNG
-i)Annotations - @Test, @DataProvider,priority, description
-ii)Assertions - AssertEquals, AssertTrue, AssertFalse, AssertNotNull
-iii)Test Suites - testNg.xml to run all the test methods
+* Annotations - @Test, @DataProvider,priority, description
+* Assertions - AssertEquals, AssertTrue, AssertFalse, AssertNotNull
+* Test Suites - testNg.xml to run all the test methods
 
 #### 7.Reporting - Allure Report
 
-* i)Dependency - Added Allure dependency in the Pom.xml file
-* ii)Annotations - Added Allure annotations in the few test methods
+* Dependency - Added Allure dependency in the Pom.xml file
+* Annotations - Added Allure annotations in the few test methods
 @Feature, @Story, @Description, @Severity
 
 
