@@ -142,12 +142,12 @@ ii)Annotations - Added Allure annotations in the few test methods
 Step 1: Navigate to the project directory in the command prompt
 Step 2: Run the following command to execute the test cases and generate the allure-results folder
 
-###### mvn clean test
+`###### mvn clean test`
 
 Step 3: After the test execution, you will find the allure-results folder in the project directory
 Step 4: To generate the Allure report, run the following commands in the command prompt
 *****Generate the Allure Report*****
 
-###### allure generate allure-results --clean -o allure-report
+`###### allure generate allure-results --clean -o allure-report`
 
-###### allure open allure-report
+`###### allure open allure-report`
