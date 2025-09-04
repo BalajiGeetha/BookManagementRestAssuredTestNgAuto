@@ -21,10 +21,16 @@ The following dependencies are added in the Pom.xml file
 
 #### Project Structure
 
-**----src/main/java
-----src/test/java
-----src/test/resources
----pom.xml**
+* src
+  * main
+    * java
+      * configFiles
+      * constants
+      * pojo
+    * resources
+  * test
+    * java
+      * tests
 
 ### Below are steps to implement the framework
 
