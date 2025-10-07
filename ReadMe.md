@@ -34,7 +34,7 @@ The following dependencies are added in the Pom.xml file
 
 ### Below are steps to implement the framework
 
-#### 3.src/main/java contain's
+#### 3.src/main/java contains
 
 ##### --Package-configFiles:
 1. configReader -- This classes contains method to read the config.properties file
